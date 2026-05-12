@@ -1,0 +1,68 @@
+{
+  "name": "gitfleet-cli",
+  "version": "1.0.1",
+  "description": "Clone multiple GitHub organization repositories with a polished terminal UI",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdullah-alsharif/gitfleet.git"
+  },
+  "homepage": "https://github.com/abdullah-alsharif/gitfleet#readme",
+  "bin": {
+    "gitfleet": "bin/gitfleet.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "tsx src/index.tsx",
+    "start": "node bin/gitfleet.js",
+    "prepack": "npm run clean && npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "commander": "^15.0.0",
+    "dotenv": "^16.6.1",
+    "execa": "^10.0.1",
+    "ink": "^7.1.1",
+    "p-limit": "^7.3.2",
+    "react": "^19.3.0",
+    "zod": "^4.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.19",
+    "@types/react": "^19.1.5",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "keywords": [
+    "github",
+    "clone",
+    "organization",
+    "repositories",
+    "cli",
+    "terminal",
+    "ink"
+  ],
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true
+  }
+}
